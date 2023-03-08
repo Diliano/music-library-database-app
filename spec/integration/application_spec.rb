@@ -21,4 +21,16 @@ describe Application do
     end
   end
 
+  context "POST /albums" do
+    it "creates a new album" do
+      response = post("/albums", title: "Voyage", release_year: "2022", artist_id: "2")
+
+      expect(response.status).to eq 200
+
+      response = get("/albums")
+
+      expect(response.body).to include "Voyage"
+    end
+  end
+
 end

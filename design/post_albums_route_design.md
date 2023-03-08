@@ -61,6 +61,10 @@ describe Application do
       response = post("/albums", title: "Voyage", release_year: "2022", artist_id: "2")
 
       expect(response.status).to eq 200
+
+      response = get("/albums")
+
+      expect(response.body).to include "Voyage"
     end
   end
 
