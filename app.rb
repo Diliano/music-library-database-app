@@ -18,12 +18,12 @@ class Application < Sinatra::Base
     repo = AlbumRepository.new
     albums = repo.all
 
-    titles = []
+    result = []
     albums.each do |album|
-      titles << album.title
+      result << album.title
     end
 
-    p titles.join(", ")
+    return result.join(", ")
   end
 
 end
