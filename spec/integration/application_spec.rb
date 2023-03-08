@@ -10,4 +10,15 @@ describe Application do
   # class so our tests work.
   let(:app) { Application.new }
 
+  context "GET /albums" do
+    it "returns all albums" do
+      response = get("/albums")
+      
+      expected_response = "Surfer Rosa, Waterloo, Super Trouper, Bossanova, Lover, Folklore, I Put a Spell on You, Baltimore, Here Comes the Sun, Fodder on My Wings, Ring Ring"
+
+      expect(response.status).to eq 200
+      expect(response.body).to eq expected_response
+    end
+  end
+
 end

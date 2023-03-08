@@ -13,4 +13,17 @@ class Application < Sinatra::Base
     also_reload 'lib/album_repository'
     also_reload 'lib/artist_repository'
   end
+
+  get '/albums' do
+    repo = AlbumRepository.new
+    albums = repo.all
+
+    titles = []
+    albums.each do |album|
+      titles << album.title
+    end
+
+    p titles.join(", ")
+  end
+
 end

@@ -27,8 +27,7 @@ _Replace the below with your own design. Think of all the different possible res
 
 When path is '/albums'
 
-=>  Doolittle
-    Surfer Rosa
+=>  Surfer Rosa
     Waterloo
     Super Trouper
     Bossanova
@@ -58,7 +57,6 @@ GET /albums
 
 Response for 200 OK
 
-Doolittle
 Surfer Rosa
 Waterloo
 Super Trouper
@@ -91,7 +89,7 @@ describe Application do
     it "returns all albums" do
       response = get("/albums")
       
-      expected_response = "Doolittle\nSurfer Rosa\nWaterloo\nSuper Trouper\nBossanova\nLover\nFolklore\nI Put a Spell on You\nBaltimore\nHere Comes the Sun\nFodder on My Wings\nRing Ring"
+      expected_response = "Surfer Rosa, Waterloo, Super Trouper, Bossanova, Lover, Folklore, I Put a Spell on You, Baltimore, Here Comes the Sun, Fodder on My Wings, Ring Ring"
 
       expect(response.status).to eq 200
       expect(response.body).to eq expected_response
