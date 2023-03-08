@@ -38,4 +38,16 @@ class Application < Sinatra::Base
     # Creates a new album; no return content
   end
 
+  get '/artists' do
+    repo = ArtistRepository.new
+    artists = repo.all
+
+    result = []
+    artists.each do |artist|
+      result << artist.name
+    end
+    
+    return result.join(", ")
+  end
+
 end
