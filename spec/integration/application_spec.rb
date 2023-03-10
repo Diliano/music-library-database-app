@@ -51,10 +51,12 @@ describe Application do
     it "returns all artists" do
       response = get("/artists")
 
-      expected_response = "Pixies, ABBA, Taylor Swift, Nina Simone"
-
       expect(response.status).to eq 200
-      expect(response.body).to eq expected_response
+      expect(response.body).to include "<h1>Artists</h1>"
+      expect(response.body).to include "Pixies"
+      expect(response.body).to include "ABBA"
+      expect(response.body).to include "<a href=\"/artists/1\">Go to artist page</a>"
+      expect(response.body).to include "<a href=\"/artists/2\">Go to artist page</a>"
     end
   end
 
@@ -101,7 +103,7 @@ describe Application do
 
     it "returns HTML content for a different artist" do
       response = get("/artists/2")
-      
+
       expect(response.status).to eq 200 
       expect(response.body).to include "<h1>ABBA</h1>"
       expect(response.body).to include "Pop"
