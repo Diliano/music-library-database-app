@@ -60,7 +60,7 @@ describe Application do
     it "creates a new artist" do
       response = post("/artists", name: "Wild nothing", genre: "Indie")
 
-      expect(response.status)to eq 200
+      expect(response.status).to eq 200
 
       response = get("/artists")
 
