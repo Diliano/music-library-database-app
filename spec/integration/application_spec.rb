@@ -71,7 +71,7 @@ describe Application do
   end
 
   context "GET /albums/:id" do
-    it "returns HTML content for a single album with the given id" do
+    it "returns HTML content for a single album with a given id" do
       response = get("/albums/1")
 
       expect(response.status).to eq 200
@@ -87,6 +87,24 @@ describe Application do
       expect(response.body).to include "<h1>Surfer Rosa</h1>"
       expect(response.body).to include "Release year: 1988"
       expect(response.body).to include "Artist: Pixies"
+    end
+  end
+
+  context "GET /artists/:id" do 
+    it "returns HTML content for a single artist with a given id" do
+      response = get("/artists/1")
+
+      expect(response.status).to eq 200 
+      expect(response.body).to include "<h1>Pixies</h1>"
+      expect(response.body).to include "Rock"
+    end
+
+    it "returns HTML content for a different artist" do
+      response = get("/artists/2")
+      
+      expect(response.status).to eq 200 
+      expect(response.body).to include "<h1>ABBA</h1>"
+      expect(response.body).to include "Pop"
     end
   end
 
