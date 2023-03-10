@@ -136,3 +136,18 @@ Test-drive and implement the following change to the `music_library_database_app
 The page returned by `GET /albums` should contain a link for each album listed. It should link to `/albums/:id`, where `:id` is the corresponding album's id.
 
 Run the server and make sure you can navigate, using your browser, from the albums list page to the single album page.
+
+## Using Links - Challenge
+
+Test-drive and implement the following changes to the `music_library_database_app` project.
+
+1. **Test-drive** a route `GET /artists/:id` which returns an HTML page showing details for a single artist.
+2. **Test-drive** a route `GET /artists` which returns an HTML page with the list of artists. This page should contain a link for each artist listed, linking to `/artists/:id` where `:id` needs to be the corresponding artist id.
+3. **Create a sequence diagram** explaining the behaviour of your program when a request is sent to `GET /artists/:id`. Make sure your diagram all includes the following:
+    * The HTTP Client
+    * The HTTP Request and the data it contains
+    * The HTTP Response and the data it contains
+    * The Application class (`app.rb`)
+    * The Repository class (`artist_repository.rb`)
+    * The View (ERB file)
+    * The Database

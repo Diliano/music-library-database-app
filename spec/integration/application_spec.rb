@@ -29,6 +29,9 @@ describe Application do
       expect(response.body).to include "Doolittle"
       expect(response.body).to include "Surfer Rosa"
       expect(response.body).to include "Super Trouper"
+      expect(response.body).to include "<a href=\"/albums/1\">Go to album page</a>"
+      expect(response.body).to include "<a href=\"/albums/2\">Go to album page</a>"
+      expect(response.body).to include "<a href=\"/albums/4\">Go to album page</a>"
     end
   end
 
