@@ -1,4 +1,4 @@
-## Exercise
+## Test-driving routes - Exercise
 
 Follow the Design recipe to test-drive a route `POST /albums` to create a new album:
 
@@ -17,7 +17,7 @@ artist_id=2
 
 Your test should assert that the new album is present in the list of records returned by `GET /albums`.
 
-## Challenge
+## Testing-driving routes - Challenge
 
 Work in the same project directory.
 
@@ -61,3 +61,37 @@ Pixies, ABBA, Taylor Swift, Nina Simone, Wild nothing
 ## POST /artists Sequence Diagram
 
 ![](/post_artists_sequence_diagram.png)
+
+## Using ERB to return dynamic HTML - Exercise
+
+In the project `music_library_database_app`.
+
+Test-drive and implement a `GET /albums/:id` route so it returns the HTML content for a single album:
+
+```html
+<!-- Example for GET /albums/1 -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Doolittle</h1>
+    <p>
+      Release year: 1989
+      Artist: Pixies
+    </p>
+  </body>
+</html>
+
+<!-- Example for GET /albums/2 -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Surfer Rosa</h1>
+    <p>
+      Release year: 1988
+      Artist: Pixies
+    </p>
+  </body>
+</html>
+```
