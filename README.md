@@ -95,3 +95,36 @@ Test-drive and implement a `GET /albums/:id` route so it returns the HTML conten
   </body>
 </html>
 ```
+
+## Using ERB to return dynamic HTML - Challenge
+
+In the project `music_library_database_app`.
+
+Test-drive and update the `GET /albums` route so it returns the list of albums as an HTML page:
+
+```html
+<!-- GET /albums -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Albums</h1>
+
+    <div>
+      Title: Doolittle
+      Released: 1989
+    </div>
+
+    <div>
+      Title: Surfer Rosa
+      Released: 1988
+    </div>
+
+    <!-- ... -->
+  </body>
+</html>
+```
+
+_(Don't forget to run the app using `rackup`)._
+
+Use your web browser to access the page.
