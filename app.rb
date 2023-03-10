@@ -16,14 +16,9 @@ class Application < Sinatra::Base
 
   get '/albums' do
     repo = AlbumRepository.new
-    albums = repo.all
+    @albums = repo.all
 
-    result = []
-    albums.each do |album|
-      result << album.title
-    end
-
-    return result.join(", ")
+    return erb(:all_albums)
   end
 
   post '/albums' do
