@@ -128,3 +128,11 @@ Test-drive and update the `GET /albums` route so it returns the list of albums a
 _(Don't forget to run the app using `rackup`)._
 
 Use your web browser to access the page.
+
+## Using Links - Exercise
+
+Test-drive and implement the following change to the `music_library_database_app` project:
+
+The page returned by `GET /albums` should contain a link for each album listed. It should link to `/albums/:id`, where `:id` is the corresponding album's id.
+
+Run the server and make sure you can navigate, using your browser, from the albums list page to the single album page.
