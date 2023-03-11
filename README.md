@@ -155,3 +155,11 @@ Test-drive and implement the following changes to the `music_library_database_ap
 ## GET /artists/:id Sequence Diagram
 
 ![](/get_artists_id_sequence_diagram.png)
+
+## Using Forms - Exercise
+
+In the project `music_library_database_app`.
+
+Test-drive and implement a form page to add a new album.
+
+You should then be able to use the form in your web browser to add a new album, and see this new album in the albums list page. 
