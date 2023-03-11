@@ -151,3 +151,7 @@ Test-drive and implement the following changes to the `music_library_database_ap
     * The Repository class (`artist_repository.rb`)
     * The View (ERB file)
     * The Database
+
+## GET /artists/:id Sequence Diagram
+
+![](/get_artists_id_sequence_diagram.png)
