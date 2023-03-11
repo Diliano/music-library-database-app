@@ -36,7 +36,7 @@ describe Application do
   end
 
   context "POST /albums" do
-    it "creates a new album" do
+    it "creates a new album and returns a HTML success page" do
       response = post("/albums", title: "Voyage", release_year: "2022", artist_id: "2")
 
       expect(response.status).to eq 200
