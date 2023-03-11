@@ -40,6 +40,7 @@ describe Application do
       response = post("/albums", title: "Voyage", release_year: "2022", artist_id: "2")
 
       expect(response.status).to eq 200
+      expect(response.body).to include "<p>Album has been added</p>"
 
       response = get("/albums")
 
@@ -107,6 +108,17 @@ describe Application do
       expect(response.status).to eq 200 
       expect(response.body).to include "<h1>ABBA</h1>"
       expect(response.body).to include "Pop"
+    end
+  end
+
+  context "GET /albums/new" do
+    it "returns the HTML form page to create a new album" do
+      response = get("/albums/new")
+
+      expect(response.status).to eq 200
+      expect(response.body).to include "<h1>Add a new album</h1>"
+      expect(response.body).to include "<form action=\"/albums\" method=\"POST\">"
+      expect(response.body).to include "<input type=\"text\" name=\"title\">"
     end
   end
 

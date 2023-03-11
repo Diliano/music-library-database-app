@@ -30,7 +30,8 @@ class Application < Sinatra::Base
     new_album.artist_id = params[:artist_id]
 
     repo.create(new_album)
-    # Creates a new album; no return content
+    
+    return erb(:album_created)
   end
 
   get '/artists' do
@@ -49,6 +50,10 @@ class Application < Sinatra::Base
 
     repo.create(new_artist)
     # Creates a new artist; no return content
+  end
+
+  get '/albums/new' do
+    return erb(:create_album)
   end
 
   get '/albums/:id' do
