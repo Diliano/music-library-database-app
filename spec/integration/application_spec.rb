@@ -62,10 +62,11 @@ describe Application do
   end
 
   context "POST /artists" do
-    it "creates a new artist" do
+    it "creates a new artist and returns a HTML success page" do
       response = post("/artists", name: "Wild nothing", genre: "Indie")
 
       expect(response.status).to eq 200
+      expect(response.body).to include "<p>Artist has been added</p>"
 
       response = get("/artists")
 
@@ -119,6 +120,17 @@ describe Application do
       expect(response.body).to include "<h1>Add a new album</h1>"
       expect(response.body).to include "<form action=\"/albums\" method=\"POST\">"
       expect(response.body).to include "<input type=\"text\" name=\"title\">"
+    end
+  end
+
+  context "GET /artists/new" do
+    it "returns the HTML form page to create a new album" do
+      response = get("/artists/new")
+
+      expect(response.status).to eq 200
+      expect(response.body).to include "<h1>Add a new artist</h1>"
+      expect(response.body).to include '<form action="/artists" method="POST"'
+      expect(response.body).to include '<input type="text" name="name'
     end
   end
 
